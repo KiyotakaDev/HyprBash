@@ -1,7 +1,12 @@
 #!/bin/bash
 
 # NOTE: /dev/null is a special device that discards
-#       everything that is wirtten in avoding any output
+# everything that is wirtten in avoding any output.
+# INFO: For more detailed command params info execute the 
+# following pattern:
+#   echo `pacman --help` # shows params
+#   echo `pacman -param --help`
+#   echo `grep --help`
 
 # Checks if the package is installed
 is_pkg_installed() {

@@ -28,4 +28,4 @@ cat << EOF
 
 EOF
 
-./firs_steps.sh
+./first_steps.sh

@@ -25,3 +25,13 @@ if [ -f /etc/pacman.conf ] && [ ! -f /etc/pacman.conf.bak ]; then
 else
   echo -e "\e[7;37m[SKIP]\e[0m pacman is already configured"
 fi
+
+# Grub configuration
+# If grub instaled and grub.cfg file exists; then
+if is_pkg_installed grub && [ -f /boot/grub/grub.cfg ]; then
+  echo -e "\e[32m[GRUB]\e[0m detected."
+
+  if [ ! -f /etc/default/grub.bak ] && [ ! -f /boot/grub/grub.bak ]; then
+    echo -e "\e[32m[GRUB]\e[0m config starts."
+  fi
+fi

@@ -12,6 +12,7 @@
 skip_f="\e[1;47;30m[SKIP]\e[0m"
 pacman_f="\e[33m[PACMAN]\e[0m"
 bootldr_f="\e[32m[BOOTLOADER]\e[0m"
+error_f="\e[31m[ERROR]\e[0m"
 
 # Checks if the package is installed
 is_pkg_installed() {

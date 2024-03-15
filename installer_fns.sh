@@ -8,6 +8,11 @@
 #   echo `pacman -param --help`
 #   echo `grep --help`
 
+# Text formats
+skip_f="\e[1;47;30m[SKIP]\e[0m"
+pacman_f="\e[33m[PACMAN]\e[0m"
+bootldr_f="\e[32m[BOOTLOADER]\e[0m"
+
 # Checks if the package is installed
 is_pkg_installed() {
 	local ChkPkg=$1

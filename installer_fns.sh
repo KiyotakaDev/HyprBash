@@ -39,6 +39,31 @@ is_pkg_available() {
   fi
 }
 
+# Checks if user has yay or paru aur helpers
+chk_aur() {
+  if is_pkg_installed yay; then
+    aurhlpr="yay"
+  elif is_pkg_insalled paru; then
+    aurhlpr="paru"
+  fi
+}
+
+# Checks if the package is on aur repos
+is_aur_available() {
+  local ChkPkg=$1
+  chk_aur
+
+  if [ -n "$aurhlpr" ]; then
+    if $aurhlpr -Ss $ChkPkg &> /dev/null; then
+      echo -e "\e[32m[$ChkPkg]\e[0m is available on aur repo"
+    else
+      echo -e "\e[31m[$ChkPkg]\e[0m is NOT available on aur repo"
+    fi
+  else
+    echo "AUR helper is not installed."
+  fi
+}
+
 # Checks if user has NVIDIA GPU for additional configuration >u<
 has_nvidia() {
   if lspci | grep -Eiq "(vga|nvidia|3d)"; then

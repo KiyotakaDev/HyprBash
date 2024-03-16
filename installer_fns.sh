@@ -64,6 +64,51 @@ is_aur_available() {
   fi
 }
 
+# Install AUR helper function
+aur_installer() {
+  # Default value :-yay
+  hlpr="${1:-yay}"
+
+  # Checks if yay or paru is already installed
+  if is_pkg_installed yay || is_pkg_installed paru; then
+    echo "AUR helper is already installed."
+    exit 0
+  fi
+
+  # Checks  if ~/Clone is a directory
+  if [ -d ~/Clone ]; then
+    echo "~/Clone directory already exists"
+    rm -rf ~/Clone/$hlpr
+  else
+    # Making dir and giving to it git icon
+    mkdir ~/Clone
+    # Git icon
+    echo -e "[Desktop Entry]\nIcon=default-folder-git" > ~/Clone/.directory
+    echo "~/Clone direcotry created."
+  fi
+
+  # Checks if git is installed and then installs aur helper selected by user
+  if is_pkg_installed git; then
+    git clone https://aur.archlinux.org/$hlpr.git ~/Clone/$hlpr
+  else
+    echo "Git is not installed pls install"
+    exit 1
+  fi
+
+  # Changes dir and completes installation
+  cd ~/Clone/$hlpr
+  makepkg ${use_default} -si
+
+  # If previous command success then
+  if [ $? -eq 0 ]; then
+    echo -e "${pkg_f}\e[32m|$hlpr|\e[0m AUR successfully UwU"
+    exit 0
+  else
+    echo -e "${error_f} Something went wront UnU"
+    exit 1
+  fi
+}
+
 # Checks if user has NVIDIA GPU for additional configuration >u<
 has_nvidia() {
   if lspci | grep -Eiq "(vga|nvidia|3d)"; then

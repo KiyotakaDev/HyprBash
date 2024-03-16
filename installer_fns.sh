@@ -69,12 +69,6 @@ aur_installer() {
   # Default value :-yay
   hlpr="${1:-yay}"
 
-  # Checks if yay or paru is already installed
-  if is_pkg_installed yay || is_pkg_installed paru; then
-    echo "AUR helper is already installed."
-    exit 0
-  fi
-
   # Checks  if ~/Clone is a directory
   if [ -d ~/Clone ]; then
     echo "~/Clone directory already exists"
@@ -97,11 +91,12 @@ aur_installer() {
 
   # Changes dir and completes installation
   cd ~/Clone/$hlpr
+  echo -e "\e[35m[MAKEPKG]\e[0m"
   makepkg ${use_default} -si
 
   # If previous command success then
   if [ $? -eq 0 ]; then
-    echo -e "${pkg_f}\e[32m|$hlpr|\e[0m AUR successfully UwU"
+    echo -e "${pkg_f}\e[32m|$hlpr|\e[0m AUR successfully installed UwU"
     exit 0
   else
     echo -e "${error_f} Something went wront UnU"

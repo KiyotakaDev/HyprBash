@@ -5,7 +5,7 @@ source installer_fns.sh
 
 # Check if user has AUR helper installed
 chk_aur
-# If arhlpr is is empty; then
+# If arhlpr is is empty and yay and paru are not installed; then
 if [ -z $aurhlpr ] && [ ! is_pkg_installed yay && ! is_pkg_installed paru ]; then
   echo -e "Select \e[32m|AUR|\e[0m helper:\n1) yay\n2) paru"
   read -p "Enter number: " usrinp

@@ -82,4 +82,8 @@ pokemon-colorscripts-git|zsh                           # display pokemon sprites
 # --------------------------------------------------- // Hyprdots
 hyprdots-ctl                                           # cli tool to manage hyprdots
 
+
+# --------------------------------------------------- // Copied packages
+neovim
+discord
 zsh

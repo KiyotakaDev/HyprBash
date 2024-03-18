@@ -41,8 +41,8 @@ if [ -f "$cstm_pkgs" ] && [ -n "$cstm_pkgs" ]; then
 fi
 
 # Adding shell to list
-# If zsh and fish ar not installed; then
-if ! is_pkg_installed zsh && ! is_pkg_installed fish; then
+# If zsh and fish are not installed; then
+if ! is_pkg_installed zsh && ! is_on_lst zsh; then 
   echo -e "Select shell:\n1) zsh\n2) fish"
   read -p "Enter number: " usrinp
 

@@ -31,13 +31,13 @@ EOF
 #./first_steps.sh
 
 # User file input
-custm_pkgs=$1
+cstm_pkgs=$1
 # Preparing packages to install file
 cp def_hyprbsh_pkgs.txt pkgs_to_install.txt
 
 # If custm var is a regular file and is not empty; then
-if [ -f "$custm_pkgs" ] && [ -n "$cutm_pkgs" ]; then
-  cat $custm_pkgs >> pkgs_to_install.txt
+if [ -f "$cstm_pkgs" ] && [ -n "$cstm_pkgs" ]; then
+  cat $cstm_pkgs >> pkgs_to_install.txt
 fi
 
 # Adding shell to list

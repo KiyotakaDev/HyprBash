@@ -39,8 +39,25 @@ if is_pkg_installed grub && [ -f /boot/grub/grub.cfg ]; then
       echo -e "${bootldr_f} NVIDIA detected, adding nvidia_drm.modset=1 to boot option."
       # 1: Set timeout to 15
       # 2: Replace ".*" to "nvidia_drm.modeset=1"
-      sed -e '/^GRUB_TIMEOUT=/s/[0-9]\+$/15/' \
-          -e '/^GRUB_CMDLINE_LINUX_DEFAULT=/s/".*"/"nvidia_drm.modeset=1"/' /etc/default/grub
+      # sed -e '/^GRUB_TIMEOUT=/s/[0-9]\+$/15/' \
+      #     -e '/^GRUB_CMDLINE_LINUX_DEFAULT=/s/".*"/"nvidia_drm.modeset=1"/' /etc/default/grub
+    fi
+
+    # Custom theme
+    echo -e "Select grub theme:\n1) Void\n2) Sky\n3) Starfield"
+    read -p "Enter an option <or> Press enter to scape: " usrinp
+    case ${usrinp} in
+      1) theme="void";;
+      2) theme="sky";;
+      3) theme="starfield";;
+      *) theme=;;
+    esac
+
+    if [ -n "$theme" ]; then
+      echo -e "${bootldr_f}\e[36m|${theme}|\e[0m theme configuration :D"
+      sed -e "/^#GRUB_THEME/c\GRUB_THEME=\"/usr/share/grub/themes/${theme}/theme.txt\"" /etc/default/grub
+    else
+      echo -e "${skip_f} grub theme configuration."
     fi
 
   fi

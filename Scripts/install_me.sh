@@ -28,7 +28,7 @@ cat << EOF
 
 EOF
 
-#./first_steps.sh
+./first_steps.sh
 
 # User file input
 cstm_pkgs=$1

@@ -38,6 +38,8 @@ if is_pkg_installed grub && [ -f /boot/grub/grub.cfg ]; then
     
     # Check nvidia
     if has_nvidia; then
+      echo -e "\e[32m[NVIDIA]\e[0m installer"
+      sudo pacman -S nvidia-dkms linux-headers
       echo -e "${bootldr_f} NVIDIA detected, adding nvidia_drm.modset=1 to boot option."
       # 1: Set timeout to 15
       # 2: Replace ".*" to "nvidia_drm.modeset=1"

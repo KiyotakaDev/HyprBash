@@ -67,7 +67,7 @@ if is_pkg_installed grub && [ -f /boot/grub/grub.cfg ]; then
       fi
       # Change the grub theme
       sudo sed -i "/GRUB_GFXMODE/c\GRUB_GFXMODE=\1920x1080,1680x1050,auto
-      /^#GRUB_THEME/c\GRUB_THEME=\"/usr/share/grub/themes/${theme}_theme/theme.txt\"" /etc/default/grub
+      /^#GRUB_THEME/c\GRUB_THEME=\"/usr/share/grub/themes/${theme}_theme/${theme}_theme/theme.txt\"" /etc/default/grub
     else
       echo -e "${skip_f} grub theme configuration."
     fi

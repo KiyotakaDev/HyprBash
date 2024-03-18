@@ -15,6 +15,9 @@ bootldr_f="\e[32m[BOOTLOADER]\e[0m"
 pkg_f="\e[36m[PACKAGE]\e[0m"
 error_f="\e[31m[ERROR]\e[0m"
 
+# Constants
+path=`dirname "$(dirname "$(realpath "$0")")"`
+
 # Checks if the package is installed
 is_pkg_installed() {
 	local ChkPkg=$1

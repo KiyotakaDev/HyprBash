@@ -54,3 +54,18 @@ if ! is_pkg_installed zsh && ! is_on_lst zsh; then
    esac
    echo "$shelly" >> pkgs_to_install.txt
 fi
+
+# ./pkgs_installer.sh pkgs_to_install.txt
+
+cat << EOF
+
+        ░█░░░█▀█░█▀▀░▀█▀  
+        ░█░░░█▀█░▀▀█░░█░
+        ░▀▀▀░▀░▀░▀▀▀░░▀░
+░█▀▀░▀█▀░█▀▀░█▀█░█▀▀    
+░▀▀█░░█░░█▀▀░█▀▀░▀▀█    
+░▀▀▀░░▀░░▀▀▀░▀░░░▀▀▀    
+
+EOF
+
+./last_steps.sh

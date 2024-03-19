@@ -58,9 +58,11 @@ is_aur_available() {
 
   if [ -n "$aurhlpr" ]; then
     if $aurhlpr -Ss $ChkPkg &> /dev/null; then
-      echo -e "\e[32m[$ChkPkg]\e[0m is available on aur repo"
+      # echo -e "\e[32m[$ChkPkg]\e[0m is available on aur repo"
+      return 0
     else
-      echo -e "\e[31m[$ChkPkg]\e[0m is NOT available on aur repo"
+      # echo -e "\e[31m[$ChkPkg]\e[0m is NOT available on aur repo"
+      return 1
     fi
   else
     echo "AUR helper is not installed."

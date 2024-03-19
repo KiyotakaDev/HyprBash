@@ -32,8 +32,8 @@ while read -r pkg; do
   elif is_pkg_available "$pkg"; then
     echo -e "${pkg_f}\e[32m|${pkg}|\e[0m from ARCH official repo added to queue."
   elif is_aur_available "$pkg"; then
-    echo -e "${pkg_f}\d[32m|${pkg}|\e[0m from AUR repo added to queue."
+    echo -e "${pkg_f}\e[32m|${pkg}|\e[0m from AUR repo added to queue."
   else
     echo -e "${error_f} unknown ${pkg}."
   fi
-done < $pkgs_list
+done < <( cut -d '#' -f 1 $pkgs_list)

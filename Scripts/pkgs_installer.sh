@@ -25,6 +25,9 @@ fi
 
 # Recieves file as script option
 pkgs_list=${1}
+# Lists to install
+archPkgs=()
+aurPkgs=()
 while read -r pkg; do
   if [ -z "$pkg" ]; then
     continue
@@ -32,9 +35,21 @@ while read -r pkg; do
     echo -e "${skip_f}\e[32m|"$pkg"|\e[0m already installed."
   elif is_pkg_available "$pkg"; then
     echo -e "${pkg_f}\e[32m|"$pkg"|\e[0m from ARCH official repo added to queue."
+    archPkgs+=("$pkg")
   elif is_aur_available "$pkg"; then
     echo -e "${pkg_f}\e[32m|"$pkg"|\e[0m from AUR repo added to queue."
+    aurPkgs+=("$pkg")
   else
     echo -e "${error_f}\e[31m|"$pkg"\e[0m unknown."
   fi
 done < <( cut -d '#' -f 1 $pkgs_list)
+#         cut by delimitier '#'
+
+# Checks if lists has something #archPkg[@] returns length
+echo -e "\n\e[36m[LETS INSTALL THEM >.<]\e[0m"
+if [ ${#archPkgs[@]} -gt 0 ]; then
+  sudo pacman -S "${archPkgs[@]}"
+fi
+if [ ${#aurPkgs[@]} -gt 0 ]; then
+  "$aurhlpr" -S "${aurPkgs[@]}"
+fi

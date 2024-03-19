@@ -55,7 +55,7 @@ if ! is_pkg_installed zsh && ! is_on_lst zsh; then
    echo "$shelly" >> pkgs_to_install.txt
 fi
 
-# ./pkgs_installer.sh pkgs_to_install.txt
+./pkgs_installer.sh pkgs_to_install.txt
 
 cat << EOF
 

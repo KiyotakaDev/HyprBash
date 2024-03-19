@@ -33,13 +33,12 @@ if is_pkg_installed grub && [ -f /boot/grub/grub.cfg ]; then
 
   if [ ! -f /etc/default/grub.bak ] && [ ! -f /boot/grub/grub.bak ]; then
     echo -e "${bootldr_f} config starts."
+    # Creates backup files
     sudo cp /etc/default/grub /etc/default/grub.bak
     sudo cp /boot/grub/grub.cfg /boot/grub/grub.cfg.bak
     
     # Check nvidia
     if has_nvidia; then
-      echo -e "\e[32m[NVIDIA]\e[0m installer"
-      sudo pacman -S nvidia-dkms linux-headers
       echo -e "${bootldr_f} NVIDIA detected, adding nvidia_drm.modset=1 to boot option."
       # 1: Set timeout to 15
       # 2: Replace ".*" to "nvidia_drm.modeset=1"
@@ -66,8 +65,8 @@ if is_pkg_installed grub && [ -f /boot/grub/grub.cfg ]; then
         sudo tar -xzf ${ThmPth} -C /usr/share/grub/themes
       fi
       # Change the grub theme
-      sudo sed -i "/GRUB_GFXMODE/c\GRUB_GFXMODE=\1920x1080,1680x1050,auto
-      /^#GRUB_THEME/c\GRUB_THEME=\"/usr/share/grub/themes/${theme}_theme/${theme}_theme/theme.txt\"" /etc/default/grub
+      sudo sed -i "/GRUB_GFXMODE/c\GRUB_GFXMODE=\1680x1050,auto
+      /^#GRUB_THEME/c\GRUB_THEME=\"/usr/share/grub/themes/${theme}_theme/theme.txt\"" /etc/default/grub
     else
       echo -e "${skip_f} grub theme configuration."
     fi

@@ -83,6 +83,10 @@ pokemon-colorscripts-git|zsh                           # display pokemon sprites
 hyprdots-ctl                                           # cli tool to manage hyprdots
 
 
+# --------------------------------------------------- // Fonts
+noto-fonts-cjk                                         # google noto CJK fonts (JP)
+
+
 # --------------------------------------------------- // Copied packages
 neovim
 discord

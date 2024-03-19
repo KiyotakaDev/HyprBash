@@ -95,7 +95,7 @@ aur_installer() {
   # Changes dir and completes installation
   cd ~/Clone/$hlpr
   echo -e "\e[35m[MAKEPKG]\e[0m"
-  makepkg ${use_default} -si
+  makepkg -si
 
   # If previous command success then
   if [ $? -eq 0 ]; then

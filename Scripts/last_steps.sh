@@ -45,3 +45,15 @@ if has_nvidia; then
     echo -e "${skip_f} modprobe.d is already configured"
   fi
 fi
+
+# Enabling services and running services
+services=(sddm NetworkManager)
+for srv in "$services"; do
+  if systemctl is-active "$srv" &> /dev/null; then
+    continue
+  else
+    echo -e "\e[36m[SYSTEMCTL]\e[0m enable and starting: \e[32m|"$srv"|\e[0m"
+    sudo systemctl enable "${srv}.service"
+    sudo systemctl start "${srv}.service"
+  fi
+done

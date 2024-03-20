@@ -59,7 +59,7 @@ if is_pkg_installed grub && [ -f /boot/grub/grub.cfg ]; then
 
     if [ -n "$theme" ]; then
       echo -e "${bootldr_f}\e[36m|${theme}|\e[0m theme configuration :D"
-      ThmPth=${path}/Source/${theme}_theme.tar.gz
+      ThmPth=${path}/assets/grub/${theme}_theme.tar.gz
       # Checks if the file exists
       if [ -e $ThmPth ]; then
         sudo tar -xzf ${ThmPth} -C /usr/share/grub/themes

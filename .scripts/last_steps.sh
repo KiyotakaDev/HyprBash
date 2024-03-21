@@ -46,10 +46,40 @@ if has_nvidia; then
   fi
 fi
 
-# Enabling services and running services
+# SDDM Configuration
+sddm=/etc/sddm.conf
+sddmtemplate=/usr/lib/sddm/sddm.conf.d/default.conf
+sddmconf() {
+  echo -e "${dpmgr_f} SDDM configuration sugar candy based >u<"
+
+  if [ ! -f $sddm ]; then
+    sudo cp $sddmtemplate $sddm  
+  fi
+  
+  if [ -f $sddm ] && [ ! -f "${sddm}.bak" ]; then
+      sudo cp $sddm "${sddm}.bak"
+      sudo tar -xzf "${path}/assets/sddm/riso.tar.gz" -C /usr/share/sddm/themes
+
+      # Adding theme to sddm config
+      sudo sed -i '/^Current=/s/^Current=.*/Current=riso/' $sddm
+      echo "SDDM configuration succeed (*￣▽￣)b"
+    else
+      echo -e "${skip_f} SDDM already configured."
+    fi
+}
+if is_pkg_installed sddm; then 
+  sddmconf
+else
+  echo -e "${pkg_f}\e[32m|sddm|\e[0m is not installed."
+  sudo pacman -S sddm
+  echo -e "${dpmgr_f} retying configuration."
+  sddmconf
+fi
+
+# Enabling services and running services (is-active | is-enabled)
 services=(sddm NetworkManager)
 for srv in "$services"; do
-  if systemctl is-active "$srv" &> /dev/null; then
+  if systemctl is-enabled "$srv" &> /dev/null; then
     continue
   else
     echo -e "\e[36m[SYSTEMCTL]\e[0m enable and starting: \e[32m|"$srv"|\e[0m"

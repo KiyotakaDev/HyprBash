@@ -1,28 +1,28 @@
 # Path
-srcPth=`dirname "$(dirname "$(realpath "$0")")"`
-thmPth="${srcPth}/swww"
-cfg_fl="${thmPth}/.wallpaper_values.conf"
+src_path=`dirname "$(dirname "$(realpath "$0")")"`
+theme_path="${src_path}/swww"
+conf_file="${theme_path}/.wallpaper_values.conf"
 
 # Themes
 themes=("anime" "neon" "lands")
 
 # Sourcing file
-if [ ! -f $cfg_fl ]; then
-  echo "saved_theme=0" > $cfg_fl
-  echo "saved_wallpaper=0" >> $cfg_fl
-  source $cfg_fl
+if [ ! -f $conf_file ]; then
+  echo "saved_theme=0" > $conf_file
+  echo "saved_wallpaper=0" >> $conf_file
+  source $conf_file
 else
-  source $cfg_fl
+  source $conf_file
 fi
 
 # Source variables
-crrnt_thm=$saved_theme
-crrnt_wllppr=$saved_wallpaper
+curr_theme=$saved_theme
+curr_wallpaper=$saved_wallpaper
 
 # Variables
-theme="${themes[$crrnt_thm]}"
-wallpapers=("$thmPth/$theme"/*)
-wallpaper=${wallpapers[$crrnt_wllppr]}
+theme="${themes[$curr_theme]}"
+wallpapers=("$theme_path/$theme"/*)
+wallpaper=${wallpapers[$curr_wallpaper]}
 quantity=${#wallpapers[@]}
 
 echo $wallpaper
@@ -31,8 +31,8 @@ echo $quantity
 
 # Functions
 save_values() {
-  echo "saved_theme=$crrnt_thm" > $cfg_fl
-  echo "saved_wallpaper=$crrnt_wllppr" >> $cfg_fl
+  echo "saved_theme=$curr_theme" > $conf_file
+  echo "saved_wallpaper=$curr_wallpaper" >> $conf_file
 }
 
 show_wallpaper() {
@@ -45,19 +45,19 @@ show_wallpaper() {
 }
 
 next_wallpaper() {
-  if [ $crrnt_wllppr -lt $((quantity - 1)) ]; then
-    ((crrnt_wllppr++))
+  if [ $curr_wallpaper -lt $((quantity - 1)) ]; then
+    ((curr_wallpaper++))
   else
-    crrnt_wllppr=0
+    curr_wallpaper=0
   fi
   show_wallpaper
 }
 
 prev_wallpaper() {
-  if [ $crrnt_wllppr -gt 0 ]; then
-    ((crrnt_wllppr--))
+  if [ $curr_wallpaper -gt 0 ]; then
+    ((curr_wallpaper--))
   else
-    crrnt_wllppr=$((quantity - 1))
+    curr_wallpaper=$((quantity - 1))
   fi
   show_wallpaper "outer"
 }

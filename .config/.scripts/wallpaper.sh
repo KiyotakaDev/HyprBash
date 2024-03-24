@@ -1,5 +1,7 @@
 # Sourcing global variables
-source global.sh
+# Executing source gobal.sh doesn't work
+path=`dirname "$(realpath "$0")"`
+source "$path/global.sh"
 
 # Functions
 print_data() {
@@ -8,7 +10,7 @@ print_data() {
 }
 
 next_wallpaper() {
-  print_data
+  # print_data
   if [ $curr_wallpaper -lt $wallpaper_quantity ]; then
     ((curr_wallpaper++))
   else
@@ -17,7 +19,7 @@ next_wallpaper() {
 }
 
 prev_wallpaper() {
-  print_data
+  # print_data
   if [ $curr_wallpaper -gt 0 ]; then
     ((curr_wallpaper--))
   else
@@ -37,3 +39,4 @@ done
 
 # Executes after function
 save_values
+show_wallpaper

@@ -1,5 +1,7 @@
 # Sourcing global variables
-source global.sh
+# Executing source global.sh doesn't work
+path=`dirname "$(realpath "$0")"`
+source "$path/global.sh"
 
 # Functions
 print_theme() {
@@ -35,4 +37,5 @@ while getopts "np" opt; do
 	esac
 done
 
+show_wallpaper
 save_values

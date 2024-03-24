@@ -10,7 +10,7 @@ print_data() {
 }
 
 next_wallpaper() {
-  # print_data
+  print_data
   if [ $curr_wallpaper -lt $wallpaper_quantity ]; then
     ((curr_wallpaper++))
   else
@@ -19,7 +19,7 @@ next_wallpaper() {
 }
 
 prev_wallpaper() {
-  # print_data
+  print_data
   if [ $curr_wallpaper -gt 0 ]; then
     ((curr_wallpaper--))
   else
@@ -37,6 +37,4 @@ while getopts "np" opt; do
   esac
 done
 
-# Executes after function
 save_values
-show_wallpaper

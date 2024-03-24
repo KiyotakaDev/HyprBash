@@ -36,6 +36,3 @@ while getopts "np" opt; do
 		   exit 1;;
 	esac
 done
-
-show_wallpaper
-save_values

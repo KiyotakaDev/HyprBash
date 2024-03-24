@@ -38,5 +38,5 @@ show_wallpaper() {
   swww img --transition-type $t_type \
   --transition-pos 0.5,0.5 \
   --transition-step 90 \
-  $wallpaper 
+  $wallpaper
 }

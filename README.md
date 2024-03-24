@@ -38,3 +38,8 @@ Then pass it to the script
 ```bash
 ./install_me.sh my_apps.txt
 ```
+
+## Last step
+
+Serve custom config from Hyprbash config dir
+

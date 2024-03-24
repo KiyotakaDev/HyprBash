@@ -31,6 +31,7 @@ qt6-wayland                            # wayland support in qt6
 # ----------------------------------- // Window Manager
 rofi-lbonn-wayland-git                 # application launcher
 waybar                                 # system bar
+otf-font-awesome                       # waybar icons
 swww                                   # wallpaper
 swaylock-effects-git                   # lock screen
 wlogout                                # logout menu
@@ -66,11 +67,6 @@ visual-studio-code-bin                 # ide text editor
 
 
 # ------------------------------------------ // Shell
-# eza|zsh                                       file lister for zsh
-# oh-my-zsh-git|zsh                             plugin manager for zsh
-# zsh-theme-powerlevel10k|zsh oh-my-zsh-git     theme for zsh
-# lsd|fish                                      file lister for fish
-# starship|fish                                 customizable shell prompt
 neofetch                                      # fetch tool
 
 

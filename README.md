@@ -48,3 +48,11 @@ ln -s ~/Hyprbash/.config ~/.config
 ```
 
 // TODO: Automatize that line
+
+### Undo
+
+To reset to default .config file
+
+```bash
+ln -s ~./config ~/.config
+```

@@ -43,3 +43,8 @@ Then pass it to the script
 
 Serve custom config from Hyprbash config dir
 
+```bash
+ln -s ~/Hyprbash/.config ~/.config
+```
+
+// TODO: Automatize that line

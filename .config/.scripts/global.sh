@@ -24,7 +24,7 @@ theme="${themes[$curr_theme]}"
 theme_quantity=$((${#themes[@]} - 1))
 wallpapers=("$theme_path/$theme"/*)
 wallpaper=${wallpapers[$curr_wallpaper]}
-quantity=${#wallpapers[@]}
+wallpaper_quantity=$((${#wallpapers[@]} - 1))
 
 # Global functions
 save_values() {

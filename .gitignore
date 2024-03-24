@@ -1,9 +1,15 @@
-
+# Scripts
 .scripts/pkgs_to_install.txt
+
+# Source files
 .config/dconf
 .config/trashrc
 .config/baloofileinformationrc
 .config/gtk-3.0
 .config/pulse
+.config/kde.org
+.config/pavucontrol.ini
+.config/session
 
+# My .config
 .config/swww/.wallpaper_values.conf

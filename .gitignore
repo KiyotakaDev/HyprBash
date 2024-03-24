@@ -1,0 +1,9 @@
+
+.scripts/pkgs_to_install.txt
+.config/dconf
+.config/trashrc
+.config/baloofileinformationrc
+.config/gtk-3.0
+.config/pulse
+
+.config/swww/.wallpaper_values.conf

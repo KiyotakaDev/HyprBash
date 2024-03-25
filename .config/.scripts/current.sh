@@ -8,4 +8,8 @@ source "$path/global.sh"
 # echo Wallpaper: $curr_wallpaper
 # echo Theme: $curr_theme
 
+swww query
+[ $? -eq 1 ] && sww-daemon
+
+
 show_wallpaper

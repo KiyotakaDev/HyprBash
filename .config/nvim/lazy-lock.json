@@ -2,6 +2,7 @@
   "lazy.nvim": { "branch": "main", "commit": "08954f723bf2d442ea020551e3acc956f4dc6dc7" },
   "neo-tree.nvim": { "branch": "v3.x", "commit": "8afbb06081ce1e4beb5b18945d14a608b10babeb" },
   "nui.nvim": { "branch": "main", "commit": "cbd2668414331c10039278f558630ed19b93e69b" },
+  "nvim-treesitter": { "branch": "master", "commit": "20042941df6c014f611e948cd656afd482823d81" },
   "nvim-web-devicons": { "branch": "master", "commit": "6662f059bf78e6092ba90cd1929599625f448f55" },
   "plenary.nvim": { "branch": "master", "commit": "8aad4396840be7fc42896e3011751b7609ca4119" },
   "tokyonight.nvim": { "branch": "main", "commit": "623c3cd60a8081b68edcaf544856c053249a659e" }

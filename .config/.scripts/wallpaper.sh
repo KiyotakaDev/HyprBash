@@ -2,31 +2,37 @@
 
 # Sourcing global variables
 # Executing source gobal.sh doesn't work
-path=`dirname "$(realpath "$0")"`
+path=$(dirname "$(realpath "$0")")
 source "$path/global.sh"
 
 # Functions
 print_data() {
-  echo ID: $curr_wallpaper
+  echo ID: $saved_wallpaper
   echo Wallpaper: $wallpaper
 }
 
 next_wallpaper() {
   print_data
-  if [ $curr_wallpaper -lt $wallpaper_quantity ]; then
-    ((curr_wallpaper++))
+  if [ $saved_wallpaper -lt $wallpaper_quantity ]; then
+    ((saved_wallpaper++))
   else
-    curr_wallpaper=0
+    saved_wallpaper=0
   fi
+
+  save_values "$saved_theme" "$saved_wallpaper"
+  show_wallpaper
 }
 
 prev_wallpaper() {
   print_data
-  if [ $curr_wallpaper -gt 0 ]; then
-    ((curr_wallpaper--))
+  if [ $saved_wallpaper -gt 0 ]; then
+    ((saved_wallpaper--))
   else
-    curr_wallpaper=$wallpaper_quantity
+    saved_wallpaper=$wallpaper_quantity
   fi
+
+  save_values "$saved_theme" "$saved_wallpaper"
+  show_wallpaper
 }
 
 while getopts "np" opt; do
@@ -38,5 +44,3 @@ while getopts "np" opt; do
        exit 1;;
   esac
 done
-
-save_values

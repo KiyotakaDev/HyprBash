@@ -17,10 +17,10 @@ fi
 source "$conf_file"
 
 # Variables
-theme="${themes[$curr_theme]}"
+theme="${themes[$saved_theme]}"
 theme_quantity=$((${#themes[@]} - 1))
 wallpapers=("$theme_path/$theme"/*)
-wallpaper=${wallpapers[$curr_wallpaper]}
+wallpaper=${wallpapers[$saved_wallpaper]}
 wallpaper_quantity=$((${#wallpapers[@]} - 1))
 
 # Global functions

@@ -2,31 +2,37 @@
 
 # Sourcing global variables
 # Executing source global.sh doesn't work
-path=`dirname "$(realpath "$0")"`
+path=$(dirname "$(realpath "$0")")
 source "$path/global.sh"
 
 # Functions
 print_theme() {
-  echo ID: $curr_theme
+  echo ID: $saved_theme
   echo Theme: $theme
 }
 
 next_theme() {
   # print_theme
-  if [ $curr_theme -lt $theme_quantity ]; then
-    ((curr_theme++))
+  if [ $saved_theme -lt $theme_quantity ]; then
+    ((saved_theme++))
   else
-    curr_theme=0
+    saved_theme=0
   fi
+
+  save_values "$saved_theme" "$saved_wallpaper"
+  show_wallpaper
 }
 
 prev_theme() {
   # print_theme
-  if [ $curr_theme -gt 0 ]; then
-    ((curr_theme--))
+  if [ $saved_theme -gt 0 ]; then
+    ((saved_theme--))
   else
-    curr_theme=$((theme_quantity))
+    saved_theme=$((theme_quantity))
   fi
+
+  save_values "$saved_theme" "$saved_wallpaper"
+  show_wallpaper
 }
 
 while getopts "np" opt; do

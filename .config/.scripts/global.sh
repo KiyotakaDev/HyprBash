@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Path
 src_path=`dirname "$(dirname "$(realpath "$0")")"`
 theme_path="${src_path}/swww"

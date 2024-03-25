@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Sourcing global variables
 # Executing source global.sh doesn't work
 path=`dirname "$(realpath "$0")"`

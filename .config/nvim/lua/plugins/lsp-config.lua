@@ -9,7 +9,7 @@ return {
     'williamboman/mason-lspconfig.nvim',
     config = function()
       require('mason-lspconfig').setup({
-        ensure_installed = { 'lua_ls', 'bashls', 'clangd' }
+        ensure_installed = { 'lua_ls', 'bashls', 'clangd', 'tsserver' }
       })
     end
   },
@@ -21,7 +21,8 @@ return {
       lspconf.lua_ls.setup({})
       lspconf.bashls.setup({})
       lspconf.clangd.setup({})
-      vim.keymap.set('n', '<C-i>', vim.lsp.buf.hover, {})
+      lspconf.tsserver.setup({})
+      vim.keymap.set('n', 'K', vim.lsp.buf.hover, {})
       vim.keymap.set('n', '<leader>gd', vim.lsp.buf.definition, {})
       vim.keymap.set({ 'n', 'v' }, '<leader>ca', vim.lsp.buf.code_action, {})
     end

@@ -8,6 +8,8 @@ return {
     -- '3rd/image.nvim', -- Optional image support in preview window: See `# Preview Mode` for more information
   },
   config = function()
-    vim.keymap.set('n', '<C-n>', ':Neotree filesystem toggle right<CR>', {})
+    vim.keymap.set('n', '<leader>n', ':Neotree filesystem toggle right<CR>', {})
+    vim.keymap.set('n', '<leader>l', ':Neotree focus<CR>', {})
+    vim.keymap.set('n', '<leader>h', '<C-w>h', {})
   end
 }

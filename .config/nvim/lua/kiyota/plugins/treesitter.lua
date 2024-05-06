@@ -28,8 +28,6 @@ return {
         "c",
         "cpp",
         "glsl",
-        "c_sharp",
-        "json",
         "css",
         "gitignore",
       },

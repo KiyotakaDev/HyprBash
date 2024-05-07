@@ -9,6 +9,5 @@ return {
     },
     config = function()
       vim.keymap.set("n", "<leader>ee", ":Neotree right toggle<CR>", { desc = "Toggle to right command" })
-      vim.keymap.set("n", "<leader>xx", ":Neotree close<CR>", { desc = "Close explorer" })
     end
 }

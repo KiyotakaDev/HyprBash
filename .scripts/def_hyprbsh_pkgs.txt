@@ -68,6 +68,8 @@ visual-studio-code-bin                 # ide text editor
 
 # ------------------------------------------ // Shell
 neofetch                                      # fetch tool
+zsh                                           # ZSH
+oh-my-zsh
 
 
 # -------------------------------------- // Development

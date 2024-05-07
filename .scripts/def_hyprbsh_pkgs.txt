@@ -70,7 +70,7 @@ visual-studio-code-bin                 # ide text editor
 neofetch                                      # fetch tool
 zsh                                           # ZSH
 oh-my-zsh-git                                 # For shell customization
-
+zsh-theme-powerlevel10k                       # ZSH themes
 
 # -------------------------------------- // Development
 lazygit

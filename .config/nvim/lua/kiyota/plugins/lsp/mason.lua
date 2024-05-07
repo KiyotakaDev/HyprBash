@@ -27,7 +27,7 @@ return {
         "bashls",
         "lua_ls",
         "clangd",
-        "glslls",
+        "glsl_analyzer",
         "cssls",
       },
     })

@@ -41,17 +41,13 @@ Then pass it to the script
 
 ## Last step
 
-Serve custom config from Hyprbash config dir
+This line is added to the installation script.
 
 ```bash
 ln -s ~/HyprBash/.config/* ~/.config
 ```
 
-// TODO: Automatize that line
-
-### Undo
-
-To reset to default .config file
+If you want to undo this execute.
 
 ```bash
 ln -s ~/.config ~/.config

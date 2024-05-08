@@ -44,7 +44,7 @@ Then pass it to the script
 Serve custom config from Hyprbash config dir
 
 ```bash
-ln -s ~/Hyprbash/.config ~/.config
+ln -s ~/HyprBash/.config/* ~/.config
 ```
 
 // TODO: Automatize that line
@@ -54,5 +54,5 @@ ln -s ~/Hyprbash/.config ~/.config
 To reset to default .config file
 
 ```bash
-ln -s ~./config ~/.config
+ln -s ~/.config ~/.config
 ```

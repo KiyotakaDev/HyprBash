@@ -76,6 +76,9 @@ else
   sddmconf
 fi
 
+# Symbolic link for HyprBash configurations
+ln -s ~/HyprBash/.config/* ~/.config 
+
 # Enabling services and running services (is-active | is-enabled)
 services=(sddm NetworkManager)
 for srv in "$services"; do

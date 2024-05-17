@@ -1,5 +1,7 @@
-hyprland   # Hyprland tiling compositor
-kitty      # Terminal
-gtk3       # Correct exec in wayland
-openssh    # For ssh
-noto-cjk   # Japanese support
+hyprland     # Hyprland tiling compositor
+kitty        # Terminal
+gtk3         # Correct exec in wayland
+openssh      # For ssh
+noto-cjk     # Japanese support
+pulseaudio   # Sound server middleware
+pavucontrol  # Frontend GTK volume control tool

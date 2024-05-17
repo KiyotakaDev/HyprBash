@@ -1,1 +1,2 @@
-print("hello from core")
+require("core.options")
+require("core.keymaps")

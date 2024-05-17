@@ -1,0 +1,5 @@
+hyprland   # Hyprland tiling compositor
+kitty      # Terminal
+gtk3       # Correct exec in wayland
+openssh    # For ssh
+noto-cjk   # Japanese support

@@ -6,3 +6,4 @@ noto-fonts-cjk     # Chinese, Japanese, Korean fonts
 ttf-noto-nerd      # Nerd font for icons
 pulseaudio         # Sound server middleware
 pavucontrol        # Frontend GTK volume control tool
+zsh                # Shell

@@ -1,4 +1,5 @@
 hyprland           # Hyprland tiling compositor
+git                # Git
 kitty              # Terminal
 gtk3               # Correct exec in wayland
 openssh            # For ssh

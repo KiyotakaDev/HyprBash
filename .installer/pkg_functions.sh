@@ -50,8 +50,13 @@ yay_installer() {
     echo -e "$skip_f |git| is already installed"
   fi
 
-  # echo "PKG yay installation"
-  # git clone https://aur.archlinux.org/yay.git
-  # cd yay
-  # makepkg -si
+  if [ -d ~/yay ]; then
+    rm -rf ~/yay
+  else
+    echo -e "${pkg_f}\e[32m|yay|\e[0m ready to install."
+    mkdir ~/yay
+    git clone https://aur.archlinux.org/yay.git ~/yay
+    cd ~/yay
+    makepkg -si
+  fi
 }

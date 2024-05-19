@@ -50,13 +50,18 @@ yay_installer() {
     echo -e "$skip_f |git| is already installed"
   fi
 
-  if [ -d ~/yay ]; then
-    rm -rf ~/yay
+  if is_pkg_installed "yay"; then
+      echo -e "\e[36m[HELPER ALREADY INSTALLED (*¯︶¯*)]\e[0m"
   else
     echo -e "${pkg_f}\e[32m|yay|\e[0m ready to install."
     mkdir ~/yay
     git clone https://aur.archlinux.org/yay.git ~/yay
     cd ~/yay
     makepkg -si
+
+    if [ $? -eq 0 ]; then
+      echo -e "\n\e[36m[HELPER INSTALLED ＼(≧▽≦)／]\e[0m"
+      exit 0
+    fi
   fi
 }

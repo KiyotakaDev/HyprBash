@@ -45,7 +45,7 @@ fi
 if [ "${#yay_pkgs[@]}" -gt 0 ]; then
   yay -S "${yay_pkgs[@]}"
 fi
-if [ "${#error_pkgs[@]}" ]; then
+if [ "${#error_pkgs[@]}" -gt 0 ]; then
   echo -e "${error_f}\e[32m|$pkg|\e[0m not found"
 fi
 

@@ -7,9 +7,10 @@ ttf-noto-nerd      # Nerd font for icons
 pulseaudio         # Sound server middleware
 pavucontrol        # Frontend GTK volume control tool
 zsh                # Shell
+unzip              # Unzip files and (clangd | glsl required)
 
 # -----------------  DEVELOPMENT
 neovim             # Simple editor
 git                # Git
 openssh            # For ssh
-nodejs             # Nodejs
+npm                # Package manager (lsp required)

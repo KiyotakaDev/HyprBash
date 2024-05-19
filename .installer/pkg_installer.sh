@@ -8,14 +8,10 @@ if [ $? -eq 1 ]; then
 fi
 
 # Takes spaces as delimiter
-packages=($(awk '{print $1}' ./default_packages.txt))
+packages=($(grep -E '^[^#]+[[:space:]]+#?' default_packages.txt | awk '{print $1}'))
 
-
-# Packages installation
-yay_installer
-
-for pkg in "${packages[1]}"; do
-  echo "Hello"
+for pkg in "${packages[@]}"; do
+  is_pkg_installed "$pkg"
 done
 
 # TODO: export XDG_CONFIG_HOME="$HOME/HyprBash/.config"

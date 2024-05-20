@@ -8,6 +8,7 @@ pulseaudio         # Sound server middleware
 pavucontrol        # Frontend GTK volume control tool
 zsh                # Shell
 unzip              # Unzip files and (clangd | glsl required)
+waybar             # Status bar
 
 # -----------------  DEVELOPMENT
 neovim             # Simple editor

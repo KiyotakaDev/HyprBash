@@ -4,7 +4,7 @@
     "source": "$(find ~/HyprBash/.config/fastfetch/art/ -name '*.txt' | shuf -n 1)"
   },
   "display": {
-    "keyWidth": 15
+    "keyWidth": 18
   },
   "modules": [
     {
@@ -42,7 +42,8 @@
     },
     {
       "type": "shell",
-      "key": "│  SHELL"
+      "key": "│  SHELL",
+      "format": "{2}"
     },
     {
       "type": "display",
@@ -60,15 +61,18 @@
     "wallpaper",
     {
       "type": "terminal",
-      "key": "│  TERMINAL"
+      "key": "│  TERMINAL",
+      "format": "{2}"
     },
     {
       "type": "cpu",
-      "key": "│ 󰻠 CPU"
+      "key": "│ 󰻠 CPU",
+      "format": "{1}"
     },
     {
       "type": "gpu",
-      "key": "│ 󰍛 GPU"
+      "key": "│ 󰍛 GPU",
+      "format": "{2}"
     },
     {
       "type": "disk",

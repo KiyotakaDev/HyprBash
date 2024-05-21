@@ -3,35 +3,93 @@
   "logo": {
     "source": "$(find ~/HyprBash/.config/fastfetch/art/ -name '*.txt' | shuf -n 1)"
   },
+  "display": {
+    "keyWidth": 15
+  },
   "modules": [
-    "title",
-    "separator",
-    "os",
-    "host",
-    "kernel",
-    "uptime",
-    "packages",
-    "shell",
-    "display",
-    "de",
-    "wm",
-    "wmtheme",
-    "theme",
-    "icons",
+    {
+      "type": "custom",
+      "format": "\u001b[90m┌────────────────────────────────────────────────────────────┐"
+    },
+    {
+      "type": "title",
+      "keyWidth": 10
+    },
+    {
+      "type": "custom",
+      "format": "\u001b[90m└────────────────────────────────────────────────────────────┘"
+    },
+    {
+      "type": "custom",
+      "format": "\u001b[90m┌────────────────────────────────────────────────────────────┐"
+    },
+    {
+      "type": "os",
+      "key": "│  OS",
+      "format": "{2}"
+    },
+    {
+      "type": "board",
+      "key": "│ 󰌢 BOARD"
+    },
+    {
+      "type": "uptime",
+      "key": "│ 󰅐 UPTIME"
+    },
+    {
+      "type": "packages",
+      "key": "│ 󰏖 PKGS" 
+    },
+    {
+      "type": "shell",
+      "key": "│  SHELL"
+    },
+    {
+      "type": "display",
+      "key": "│ 󰍹 DP"
+    },
+    {
+      "type": "wm",
+      "key": "│  WM"
+    },
     "font",
-    "cursor",
-    "terminal",
-    "terminalfont",
-    "cpu",
-    "gpu",
-    "memory",
-    "swap",
-    "disk",
-    "localip",
-    "battery",
-    "poweradapter",
-    "locale",
+    {
+      "type": "cursor",
+      "key": "│ 󰇀 CURSOR"
+    },
+    "wallpaper",
+    {
+      "type": "terminal",
+      "key": "│  TERMINAL"
+    },
+    {
+      "type": "cpu",
+      "key": "│ 󰻠 CPU"
+    },
+    {
+      "type": "gpu",
+      "key": "│ 󰍛 GPU"
+    },
+    {
+      "type": "disk",
+      "key": "│  DISK"
+    },
+    {
+      "type": "media",
+      "key": "│ 󰝚 MEDIA"
+    },
+    {
+      "type": "locale",
+      "key": "│  LOACALE"
+    },
+    {
+      "type": "custom",
+      "format": "\u001b[90m└────────────────────────────────────────────────────────────┘"
+    },
     "break",
-    "colors"
+    {
+      "type": "custom",
+      "format": " \u001b[90m  \u001b[31m  \u001b[32m  \u001b[33m  \u001b[34m  \u001b[35m  \u001b[36m  \u001b[37m  \u001b[38m  \u001b[39m       \u001b[38m  \u001b[37m  \u001b[36m  \u001b[35m  \u001b[34m  \u001b[33m  \u001b[32m  \u001b[31m  \u001b[90m "
+    }
   ]
 }

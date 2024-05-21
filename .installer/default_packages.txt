@@ -3,6 +3,7 @@ hyprland           # Hyprland tiling compositor
 kitty              # Terminal
 gtk3               # Correct exec in wayland
 noto-fonts-cjk     # Chinese, Japanese, Korean fonts
+otf-font-awesome   # Waybar font
 ttf-noto-nerd      # Nerd font for icons
 pulseaudio         # Sound server middleware
 pavucontrol        # Frontend GTK volume control tool

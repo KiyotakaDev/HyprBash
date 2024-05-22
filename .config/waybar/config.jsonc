@@ -8,6 +8,7 @@
   "passthrough": false,
   "gtk-layer-shell": true,
   "reload_style_on_change": true,
+  "margin": "10 10 0 10",
   // "width": 1280, // Waybar width
     // Choose the order of the modules
     "modules-left": [ "clock", "hyprland/workspaces" ],
@@ -22,7 +23,7 @@
       "custom/power"
     ],
     "custom/power": {
-      "format": " {}",
+      "format": " ",
       "on-click": "wlogout",
       "tooltip": false
     },
@@ -63,7 +64,7 @@
     },
     "cpu": {
       "format": "{usage}% ",
-      "tooltip": false
+      "tooltip": true
     },
     "memory": {
       "format": "{}% "

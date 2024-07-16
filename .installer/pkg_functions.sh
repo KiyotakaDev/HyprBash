@@ -65,3 +65,13 @@ yay_installer() {
     fi
   fi
 }
+
+has_nvidia() {
+  if lspci | grep -Eiq "(VGA|nvidia|3d)"; then
+    # echo -e "\e[31m[NVIDIA-GPU]\e[0m detected :D"
+    return 0;
+  else
+    # echo -e "\e31m[NVIDIA-GPU]\e[0m not detected"
+    return 1;
+  fi
+}

@@ -17,3 +17,4 @@ neovim             # Simple editor
 git                # Git
 openssh            # For ssh
 npm                # Package manager (lsp required)
+cmake              # CMake

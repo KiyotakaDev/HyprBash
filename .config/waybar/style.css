@@ -1,14 +1,13 @@
 @define-color base         #250033;
 @define-color main         #00FFF0;
-@define-color secondary    #2d1537;
-@define-color hover        #4B1E52;
+@define-color secondary    #3e0854;
+@define-color hover        #5f0f6b;
 
 * {
   /* `otf-font-awesome` is required to be installed for icons */
   font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif;
   font-size: 16px;
   font-weight: 700;
-  color: @main;
   border: none;
   box-shadow: none;
 }
@@ -16,9 +15,9 @@
 window#waybar {
   border-radius: 20px;
   background-color: @base;
+  color: @main;
   border: 0.8px solid @main;
-  transition-property: background-color;
-  transition-duration: .5s;
+  transition: all .5s ease;
 }
 
 window#waybar.hidden {
@@ -34,45 +33,59 @@ background-color: #FFFFFF;
 }
 */
 
+tooltip {
+  background-color: @secondary;
+  border-radius: 10px;
+}
+
+/* WORKSPACES */
 #workspaces {
-  padding: 0 10px;
+  padding: 2px;
+  margin: 0 4px;
 }
 #workspaces button {
-  background: @secondary;
-  margin: 4px;
+  background-color: @secondary;
+  color: @main;
+  margin: 2px 5px;
 }
-#clock:hover,
-#workspaces button:hover,
-#cpu:hover,
-#temperature:hover,
-#memory:hover,
-#pulseaudio:hover,
-#custom-power:hover {
-  background: @hover;
+#workspaces button.active {
+  background-color: @main;
+  color: @base;
+  transition: all .6s ease-out;
+}
+#workspaces button:hover {
+  background-color: @hover;
   box-shadow: 0px 0px 8px 0px @main;
 }
 
+/* MODULES */
 #clock,
 #cpu,
 #temperature,
 #memory,
 #pulseaudio,
-#pulseaudio#microphone,
 #custom-power {
+  background-color: @secondary;
   padding: 0 15px;
-  background: @secondary;
   margin: 4px;
-  transition-property: background-color;
-  transition-duration: .5s;
+  transition: all .5s ease-in-out;
+  border-radius: 8px;
 }
+
 #clock {
-  border-radius: 22px 10px 10px 20px;
+  border-radius: 22px 10px 10px 22px;
 }
 #custom-power {
   border-radius: 10px 22px 22px 10px;
 }
-#cpu,
-#temperature,
-#memory {
-  border-radius: 8px;
+
+#clock:hover,
+#cpu:hover,
+#temperature:hover,
+#memory:hover,
+#memory:hover,
+#pulseaudio:hover,
+#custom-power:hover {
+  background-color: @hover;
+  box-shadow: 0px 0px 8px 0px @main;
 }

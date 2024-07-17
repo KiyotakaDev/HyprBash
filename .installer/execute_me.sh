@@ -9,21 +9,14 @@ handle_error() {
 source ./pkg_functions.sh || handle_error "Sourcing functions file" 
 source ./formats.sh || handle_error "Sourcing formats file"
 
-# Packages installer
-# ./pkg_installer.sh ./default_packages.txt
+# 1: Base config script (pacman, grub)
+./base_conf.sh
 
-# Symbolic link for ~/HyprBash/.config/* files
-if [ ! -d ~/.config-bak ]; then
-  echo -e "\e[36m[SYMLINK GENERATION]\e[0m"
-  mv ~/.config ~/.config-bak
-  mkdir ~/.config
-  ln -s ~/HyprBash/.config/* ~/.config
-else
-  echo -e "${skip_f}\e[36m[SYMLINK]\e[0m"
-fi
+# 2: Packages installer script
+./pkg_installer.sh ./default_packages.txt
 
-# NVIDIA configuration
+# 3: NVIDIA specific config script 
 ./nvidia_conf.sh
 
-# Base configuration (pacman & grub)
-./base_conf.sh
+# 4: Final config script (sddm, symlink, services)
+./final_conf.sh

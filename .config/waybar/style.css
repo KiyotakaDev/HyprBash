@@ -14,7 +14,7 @@
 
 window#waybar {
   border-radius: 20px;
-  background-color: @base;
+  background: @base;
   color: @main;
   border: 0.8px solid @main;
   transition: all .5s ease;
@@ -26,15 +26,16 @@ window#waybar.hidden {
 
 /*
 window#waybar.empty {
-background-color: transparent;
+background: transparent;
 }
 window#waybar.solo {
-background-color: #FFFFFF;
+background: #FFFFFF;
 }
 */
 
 tooltip {
-  background-color: @secondary;
+  background: @secondary;
+  color: @main;
   border-radius: 10px;
 }
 
@@ -44,18 +45,18 @@ tooltip {
   margin: 0 4px;
 }
 #workspaces button {
-  background-color: @secondary;
+  background: @secondary;
   color: @main;
   margin: 2px 5px;
 }
+#workspaces button:hover {
+  background: @hover;
+  box-shadow: 0 0 8px 0 @main; 
+}
 #workspaces button.active {
-  background-color: @main;
+  background: @main;
   color: @base;
   transition: all .6s ease-out;
-}
-#workspaces button:hover {
-  background-color: @hover;
-  box-shadow: 0px 0px 8px 0px @main;
 }
 
 /* MODULES */
@@ -65,7 +66,7 @@ tooltip {
 #memory,
 #pulseaudio,
 #custom-power {
-  background-color: @secondary;
+  background: @secondary;
   padding: 0 15px;
   margin: 4px;
   transition: all .5s ease-in-out;
@@ -86,6 +87,6 @@ tooltip {
 #memory:hover,
 #pulseaudio:hover,
 #custom-power:hover {
-  background-color: @hover;
+  background: @hover;
   box-shadow: 0px 0px 8px 0px @main;
 }

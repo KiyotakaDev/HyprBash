@@ -20,6 +20,8 @@
       "sway/language",
       "battery",
       "battery#bat2",
+      "pulseaudio",
+      "pulseaudio#microphone",
       "custom/power"
     ],
     "custom/power": {
@@ -40,7 +42,10 @@
 			  "5": "五",
 			  "6": "六",
         "7": "七",
-        "8": "八"
+        "8": "八",
+        "urgent": "",
+        "focused": "",
+        "default": ""
       },
       "persistent-workspaces": {
         "1": [],

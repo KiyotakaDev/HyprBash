@@ -13,6 +13,10 @@ waybar                # Status bar
 wlogout               # Logout interface
 
 sddm                  # Display manager
+pipewire              # Hyprland recommended
+wireplumber           # Hyprland recommended
+
+firefox               # Browser
 
 # --------------------  DEVELOPMENT
 neovim                # Simple editor

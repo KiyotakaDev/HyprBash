@@ -1,6 +1,7 @@
 #!/bin/bash
 
 source ./formats.sh
+source ./pkg_functions.sh
 
 if has_nvidia; then
   echo -e "\e[32m[NVIDIA CONFIGURATION]\e[0m"

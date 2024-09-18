@@ -1,20 +1,23 @@
 # --------------------  SYSTEM 
-hyprland              # Hyprland tiling compositor
-kitty                 # Terminal
-gtk3                  # Correct exec in wayland
-noto-fonts-cjk        # Chinese, Japanese, Korean fonts
-otf-font-awesome      # Waybar font
-ttf-noto-nerd         # Nerd font for icons
-pulseaudio            # Sound server middleware
-pavucontrol           # Frontend GTK volume control tool
-zsh                   # Shell
-unzip                 # Unzip files and (clangd | glsl required)
-waybar                # Status bar
-wlogout               # Logout interface
+hyprland                      # Hyprland tiling compositor
+kitty                         # Terminal
+gtk3                          # Correct exec in wayland
+noto-fonts-cjk                # Chinese, Japanese, Korean fonts
+otf-font-awesome              # Waybar font
+ttf-noto-nerd                 # Nerd font for icons
+pulseaudio                    # Sound server middleware
+pavucontrol                   # Frontend GTK volume control tool
+zsh                           # Shell
+zsh-completions               # ||
+zsh-autosuggestions           # ||
+zsh-theme-powerlevel10k-git   # ||
+unzip                         # Unzip files and (clangd | glsl required)
+waybar                        # Status bar
+wlogout                       # Logout interface
 
-sddm                  # Display manager
-pipewire              # Hyprland recommended
-wireplumber           # Hyprland recommended
+sddm                          # Display manager
+pipewire                      # Hyprland recommended
+wireplumber                   # Hyprland recommended
 
 firefox               # Browser
 

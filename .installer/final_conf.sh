@@ -17,19 +17,19 @@ fi
 
 if [ -f $sddm ] && [ ! -f "${sddm}.bak" ]; then
   sudo cp $sddm "${sddm}.bak"
-  sudo tar -xzf ~/HyprBash/assests/sddm/riso.tar.gz -C /usr/share/sddm/themes
+  sudo tar -xzf ~/HyprBash/assests/sddm/zenless.tar.gz -C /usr/share/sddm/themes
 
   # Adding theme to SDDM config file
-  sudo sed -i '/^Current=/s/^Current=.*/Current=riso/' $sddm
+  sudo sed -i '/Current=/c\Current=zenless' $sddm
   echo "SDDM configuration succeed (*￣▽￣)b"
 else
   echo -e "${skip_f} SDDM is already configured..."
 fi
 
 # Symbolic link for ~/HyprBash/.config/* files
-if [ ! -d ~/.config-bak ]; then
+if [ ! -d ~/.config_bak ]; then
   echo -e "\e[36m[SYMLINK GENERATION]\e[0m"
-  mv ~/.config ~/.config-bak
+  mv ~/.config ~/.config_bak
   mkdir ~/.config
   ln -s ~/HyprBash/.config/* ~/.config
 else

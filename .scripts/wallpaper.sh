@@ -1,63 +1,30 @@
 #!/bin/bash
 
-STATE_FILE="$HOME/HyprBash/.scripts/.wallpaper_state"
+# Sourcing variables
+source "$HOME/HyprBash/.scripts/state.sh"
 
-if [ ! -f "$STATE_FILE" ]; then
-  echo "abstract,1" > "$STATE_FILE"
-fi
+change_wallpaper() {
+  set_current
+  local motion=$1
+  local animation=$2
 
-# Variables
-current_theme=
-current_wallpaper=
-set_current() {
-  # Internal Field Separator (abstract,1) => abstract 1
-  IFS=',' read current_theme current_wallpaper < "$STATE_FILE"
-  echo "$current_theme,$current_wallpaper"
-}
-set_current
+  get_wall_quantity
 
-next_wallpaper() {
-  if [ "$current_wallpaper" -lt 3 ]; then
-    new_wallpaper=$((current_wallpaper+1))
-  else
-    new_wallpaper=1
+  
+  if [ "$motion" = "next" ]; then
+    if [ "$current_wallpaper" -lt "$WALL_QUANTITY" ]; then
+      next_wallpaper=$((current_wallpaper+1))
+    else
+      next_wallpaper=1
+    fi
+  elif [ "$motion" = "prev" ]; then
+    if [ "$current_wallpaper" -gt 1 ]; then
+      next_wallpaper=$((current_wallpaper-1))
+    else
+      next_wallpaper=$WALL_QUANTITY
+    fi
   fi
-
-  echo "$current_theme,$new_wallpaper" > "$STATE_FILE"
-  set_wallpaper "$current_theme" "$new_wallpaper"
+  
+  echo "$current_theme,$next_wallpaper" > $STATE_FILE
+  set_wallpaper "$current_theme" "$next_wallpaper" "$animation"
 }
-
-prev_wallpaper() {
-  if [ "$current_wallpaper" -gt 1 ]; then
-    new_wallpaper=$((current_wallpaper-1))
-  else
-    new_wallpaper=3
-  fi
-
-  echo "$current_theme,$new_wallpaper" > "$STATE_FILE"
-  set_wallpaper "$current_theme" "$new_wallpaper"
-}
-
-
-set_wallpaper() {
-  theme="$1"
-  wallpaper="$2"
-  wallpaper_path="$HOME/HyprBash/assests/swww/$1/wall_$2.png"
-
-  swww img --transition-type grow \
-           --transition-pos 0.5,0.5 \
-           --transition-step 20 \
-           --transition-fps 165 \
-           "$wallpaper_path"
-}
-
-while getopts "npc" opt; do
-  case "$opt" in
-    n) next_wallpaper;;
-    p) prev_wallpaper;;
-    c) set_wallpaper "$current_theme" "$current_wallpaper";;
-    *) echo "n: Next wallper"
-       echo "p: Prev wallpaper"
-       exit 1;;
-  esac
-done

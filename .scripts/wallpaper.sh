@@ -6,10 +6,17 @@ if [ ! -f "$STATE_FILE" ]; then
   echo "abstract,1" > "$STATE_FILE"
 fi
 
-next_wallpaper() {
-  # Internal Field Separator
+# Variables
+current_theme=
+current_wallpaper=
+set_current() {
+  # Internal Field Separator (abstract,1) => abstract 1
   IFS=',' read current_theme current_wallpaper < "$STATE_FILE"
+  echo "$current_theme,$current_wallpaper"
+}
+set_current
 
+next_wallpaper() {
   if [ "$current_wallpaper" -lt 3 ]; then
     new_wallpaper=$((current_wallpaper+1))
   else
@@ -21,8 +28,6 @@ next_wallpaper() {
 }
 
 prev_wallpaper() {
-  IFS=',' read current_theme current_wallpaper < "$STATE_FILE"
-
   if [ "$current_wallpaper" -gt 1 ]; then
     new_wallpaper=$((current_wallpaper-1))
   else
@@ -46,10 +51,11 @@ set_wallpaper() {
            "$wallpaper_path"
 }
 
-while getopts "np" opt; do
+while getopts "npc" opt; do
   case "$opt" in
     n) next_wallpaper;;
     p) prev_wallpaper;;
+    c) set_wallpaper "$current_theme" "$current_wallpaper";;
     *) echo "n: Next wallper"
        echo "p: Prev wallpaper"
        exit 1;;

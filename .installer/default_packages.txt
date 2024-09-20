@@ -16,6 +16,9 @@ waybar                        # Status bar
 wlogout                       # Logout interface
 
 sddm                          # Display manager
+qt5-quickcontrols             # Avoid theme errors
+qt5-quickcontrols2            # ||
+qt5-graphicaleffects          # ||
 pipewire                      # Hyprland recommended
 wireplumber                   # Hyprland recommended
 

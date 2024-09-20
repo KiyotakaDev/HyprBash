@@ -20,6 +20,19 @@ next_wallpaper() {
   set_wallpaper "$current_theme" "$new_wallpaper"
 }
 
+prev_wallpaper() {
+  IFS=',' read current_theme current_wallpaper < "$STATE_FILE"
+
+  if [ "$current_wallpaper" -gt 1 ]; then
+    new_wallpaper=$((current_wallpaper-1))
+  else
+    new_wallpaper=3
+  fi
+
+  echo "$current_theme,$new_wallpaper" > "$STATE_FILE"
+  set_wallpaper "$current_theme" "$new_wallpaper"
+}
+
 
 set_wallpaper() {
   theme="$1"
@@ -36,6 +49,7 @@ set_wallpaper() {
 while getopts "np" opt; do
   case "$opt" in
     n) next_wallpaper;;
+    p) prev_wallpaper;;
     *) echo "n: Next wallper"
        echo "p: Prev wallpaper"
        exit 1;;

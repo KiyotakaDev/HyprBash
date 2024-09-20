@@ -25,8 +25,8 @@ load_wallpaper() {
   local wallpaper_path="$HOME/HyprBash/assests/swww/$current_theme/wall_$current_wallpaper.png"
 
   swww img --transition-type wipe \
-           --transition-angle 180 \
-           --transition-step 20 \
+           --transition-angle 30 \
+           --transition-step 255 \
            --transition-fps 165 \
            "$wallpaper_path"
 }

@@ -22,7 +22,7 @@ qt5-graphicaleffects          # ||
 pipewire                      # Hyprland recommended
 wireplumber                   # Hyprland recommended
 
-firefox               # Browser
+firefox                       # Browser
 
 # --------------------  DEVELOPMENT
 neovim                # Simple editor
@@ -30,3 +30,6 @@ git                   # Git
 openssh               # For ssh
 npm                   # Package manager (lsp required)
 cmake                 # CMake
+
+# -------------------- PRETTIER
+swww                  # Wallpapers

@@ -37,7 +37,7 @@ if [ ! -f /etc/default/grub.bak ] && [ ! -f /boot/grub/grub.cfg.bak ]; then
   if has_nvidia; then
     echo -e "${boot_f} NVIDIA detected, adding \"nvidia_drm.modset=1\" to boot option"
     sudo sed -i "/^GRUB_TIMEOUT=/s/[0-9]\+$/15/ 
-      /GRUB_DEFAULT/c\GRUB_DEFAULT=true 
+      /^GRUB_DEFAULT=/c\GRUB_DEFAULT=saved 
       /#GRUB_SAVEDEFAULT=/s/^#//" /etc/default/grub
     sudo sed -i -e '/^GRUB_CMDLINE_LINUX_DEFAULT=/s/".*"/"nvidia_drm.modeset=1"/' /etc/default/grub
   fi

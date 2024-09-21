@@ -44,12 +44,12 @@ if [ ! -f /etc/default/grub.bak ] && [ ! -f /boot/grub/grub.cfg.bak ]; then
 
   # THEME
   echo -e "\e[36m[GRUB THEME]\e[0m"
-  themePath=~/HyprBash/assests/grub/void_theme.tar.gz
+  themePath=~/HyprBash/assests/grub/jp_theme.tar.gz
   if [ -e $themePath ]; then
     sudo tar -xzf ${themePath} -C /usr/share/grub/themes
     # Change THEME
     sudo sed -i "/GRUB_GFXMODE/c\GRUB_GFXMODE=\2560x1440,1680x1050,auto
-    /^#GRUB_THEME/c\GRUB_THEME=\"/usr/share/grub/themes/void_theme/theme.txt\"" /etc/default/grub
+    /^#GRUB_THEME/c\GRUB_THEME=\"/usr/share/grub/themes/jp_theme/theme.txt\"" /etc/default/grub
     # Make grub config file
     sudo grub-mkconfig -o /boot/grub/grub.cfg
   fi

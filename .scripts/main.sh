@@ -9,11 +9,15 @@ source "$DIR/theme.sh"
 # Set current state
 set_current
 
+# Variables
+BASE="$HOME/HyprBash/assests/swww"
+
 set_wallpaper() {
   local theme="$1"
   local wallpaper="$2"
   local animation=${3:-"wipe"}
-  local wallpaper_path="$HOME/HyprBash/assests/swww/$theme/wall_$wallpaper.png"
+  local wall_located=$(ls "$BASE/$theme/" | grep -E "wall_$wallpaper\.(jpg|png)")
+  local wallpaper_path="$BASE/$theme/$wall_located"
 
   swww img --transition-type "$animation" \
            --transition-pos 0.5,0.5 \
@@ -21,8 +25,10 @@ set_wallpaper() {
            --transition-fps 165 \
            "$wallpaper_path"
 }
+
 load_wallpaper() {
-  local wallpaper_path="$HOME/HyprBash/assests/swww/$current_theme/wall_$current_wallpaper.png"
+  local wall_located=$(ls "$BASE/$theme/" | grep -E "wall_$current_wallpaper\.(jpg|png)")
+  local wallpaper_path="$BASE/$current_theme/$wall_located"
 
   swww img --transition-type wipe \
            --transition-angle 30 \

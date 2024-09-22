@@ -27,7 +27,7 @@ set_wallpaper() {
 }
 
 load_wallpaper() {
-  local wall_located=$(ls "$BASE/$theme/" | grep -E "wall_$current_wallpaper\.(jpg|png)")
+  local wall_located=$(ls "$BASE/$current_theme/" | grep -E "wall_$current_wallpaper\.(jpg|png)")
   local wallpaper_path="$BASE/$current_theme/$wall_located"
 
   swww img --transition-type wipe \

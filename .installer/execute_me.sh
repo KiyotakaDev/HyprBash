@@ -20,3 +20,6 @@ source ./formats.sh || handle_error "Sourcing formats file"
 
 # 4: Final config script (sddm, symlink, services)
 ./final_conf.sh
+
+# 5: Needed for proper config work
+./reboot_timer.sh

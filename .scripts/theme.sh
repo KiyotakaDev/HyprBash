@@ -9,11 +9,11 @@ change_theme() {
   current_wallpaper=1
 
   local themes=($(ls "$HOME/HyprBash/assests/swww/"))
-  local THEME_QUANTITY=${#themes[@]}
+  local THEME_QUANTITY=$((${#themes[@]}-1))
 
   # Find $current_theme index
   theme_index=-1
-  for ((i = 0; i < THEME_QUANTITY; i++)); do
+  for ((i = 0; i <= THEME_QUANTITY; i++)); do
     if [ "${themes[i]}" == "$current_theme" ]; then
       theme_index=$i
       break

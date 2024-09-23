@@ -18,11 +18,12 @@ set_current() {
 
 # Gets the amount of images in the directory
 get_wall_quantity() {
-  local theme_dir="$HOME/HyprBash/assests/swww/$current_theme"
+  local wall_dir="$HOME/HyprBash/assests/swww/$current_theme"
 
-  if [ -d "$theme_dir" ]; then
-    WALL_QUANTITY=$(ls "$theme_dir" | wc -l)
+  if [ -d "$wall_dir" ]; then
+    WALL_QUANTITY=$(ls "$wall_dir" | wc -l)
   else
     WALL_QUANTITY=1
   fi
 }
+

@@ -8,22 +8,34 @@ change_theme() {
   local motion=$1
   current_wallpaper=1
 
-  get_theme_quantity
+  local themes=($(ls "$HOME/HyprBash/assests/swww/"))
+  local THEME_QUANTITY=${#themes[@]}
+
+  # Find $current_theme index
+  theme_index=-1
+  for ((i = 0; i < THEME_QUANTITY; i++)); do
+    if [ "${themes[i]}" == "$current_theme" ]; then
+      theme_index=$i
+      break
+    fi
+  done
 
   if [ "$motion" = "next" ]; then
-    if [ "$current_theme" -lt "$THEME_QUANTITY" ]; then
-      next_theme=$((current_theme+1)) 
+    if [ "$theme_index" -lt "$THEME_QUANTITY" ]; then
+      $((theme_index++))
     else
-      next_theme=1
-    fi 
+      theme_index=0
+    fi
   elif [ "$motion" = "prev" ]; then
-    if [ "$current_theme" -gt 1 ]; then
-      next_theme=$((current_theme-1))
+    if [ "$theme_index" -gt 0 ]; then
+      $((theme_index--))
     else
-      next_theme=$THEME_QUANTITY
+      theme_index=$THEME_QUANTITY
     fi
   fi
 
-  echo "$next_theme,$current_wallpaper" > $STATE_FILE
-  set_wallpaper "$next_theme" "$current_wallpaper"
+  current_theme=${themes[$theme_index]}
+  
+  echo "$current_theme,$current_wallpaper" > $STATE_FILE
+  set_wallpaper "$current_theme" "$current_wallpaper"
 }

@@ -12,7 +12,7 @@ source ./formats.sh || handle_error "Sourcing formats file"
 
 
 # Extract package names, taking spaces as delimiter
-packages=($(grep -E '^[^#]+[[:space:]]+#?' default_packages.txt | awk '{print $1}'))
+packages=($(grep -E '^[^#]+[[:space:]]+#?' ./default_packages.txt | awk '{print $1}'))
 if has_nvidia; then
   packages+=("nvidia-dkms" "nvidia-utils" "egl-wayland" "linux-headers")
 fi

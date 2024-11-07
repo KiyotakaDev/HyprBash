@@ -13,7 +13,7 @@ source ./formats.sh || handle_error "Sourcing formats file"
 ./base_conf.sh
 
 # 2: Packages installer script
-./pkg_installer.sh ./default_packages.txt
+./pkg_installer.sh
 
 # 3: NVIDIA specific config script 
 ./nvidia_conf.sh

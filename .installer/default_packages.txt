@@ -20,6 +20,10 @@ pipewire                      # Hyprland recommended
 wireplumber                   # Hyprland recommended
 
 firefox                       # Browser
+xdg-desktop-portal-hyprland   # Screensharing, global shortcuts, etc.
+rofi-wayland                  # App launcher
+cliphist                      # Clipboard manager
+dolphin                       # File manager
 
 # --------------------  DEVELOPMENT
 neovim                # Simple editor

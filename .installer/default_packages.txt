@@ -1,6 +1,7 @@
 # --------------------  SYSTEM 
 hyprland                      # Hyprland tiling compositor
 kitty                         # Terminal
+tmux                         # Terminal multiplexer
 gtk3                          # Correct exec in wayland
 noto-fonts-cjk                # Chinese, Japanese, Korean fonts
 otf-font-awesome              # Waybar font
@@ -24,6 +25,9 @@ xdg-desktop-portal-hyprland   # Screensharing, global shortcuts, etc.
 rofi-wayland                  # App launcher
 cliphist                      # Clipboard manager
 dolphin                       # File manager
+
+pamixer                       # Audio pkg for script
+
 
 # --------------------  DEVELOPMENT
 neovim                # Simple editor

@@ -51,12 +51,20 @@ yay_installer() {
   fi
 
   if is_pkg_installed "yay"; then
-      echo -e "\e[36m[HELPER ALREADY INSTALLED (*¯︶¯*)]\e[0m"
+    echo -e "\e[36m[HELPER ALREADY INSTALLED (*¯︶¯*)]\e[0m"
   else
+    if [ -d "$HOME/Clones" ]; then
+      echo "Clones directory already exists ._."
+      rm -rf "$HOME/Clones/yay"
+    else
+      mkdir "$HOME/Clones"
+      echo -e "[Desktop Entry]\nIcon=default-folder-git" > "$HOME/Clones/.directory"
+      echo "Clones directory is created :D"
+    fi
+
     echo -e "${pkg_f}\e[32m|yay|\e[0m ready to install."
-    mkdir ~/yay
-    git clone https://aur.archlinux.org/yay.git ~/yay
-    cd ~/yay
+    git clone "https://aur.archlinux.org/yay.git" "$HOME/Clones/yay"
+    cd "$HOME/Clones/yay"
     makepkg -si
 
     if [ $? -eq 0 ]; then

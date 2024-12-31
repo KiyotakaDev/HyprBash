@@ -36,6 +36,9 @@ else
   echo -e "${skip_f}\e[36m[SYMLINK]\e[0m"
 fi
 
+# Tmux plugin manager
+~/HyprBash/.scripts/tmux.sh
+
 
 # Services
 services=(sddm NetworkManager)

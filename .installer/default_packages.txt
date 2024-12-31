@@ -9,6 +9,7 @@ ttf-noto-nerd                 # Nerd font for icons
 pulseaudio                    # Sound server middleware
 pavucontrol                   # Frontend GTK volume control tool
 zsh                           # Shell
+fastfetch                     # Neofetch-like
 unzip                         # Unzip files and (clangd | glsl required)
 waybar                        # Status bar
 wlogout                       # Logout interface

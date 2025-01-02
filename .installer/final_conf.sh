@@ -35,6 +35,11 @@ if [ ! -d ~/.config_bak ]; then
 else
   echo -e "${skip_f}\e[36m[SYMLINK]\e[0m"
 fi
+# Symlink for other dotfiles (.zshrc, .gtk-2.0)
+for file in ~/HyprBash/.config/.*; do
+  # If file rm existing files and symlink
+  [ -f "$file" ] && ln -sf "$file" ~
+done
 
 # Tmux plugin manager
 ~/HyprBash/.scripts/tmux.sh

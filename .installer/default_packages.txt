@@ -28,7 +28,11 @@ cliphist                      # Clipboard manager
 dolphin                       # File manager
 pamixer                       # Audio pkg for script
 nwg-look                      # GTK3 settings editor
-
+qt5ct                         # Qt5 Configuration Utility
+qt5-wayland                   # Wayland support in qt5
+kvantum                       # SVG based qt6 theme engine
+oh-my-zsh-git                 # ZSH Configuration
+zsh-theme-powerlevel10k       # ZSH theme
 
 # --------------------  DEVELOPMENT
 neovim                # Simple editor

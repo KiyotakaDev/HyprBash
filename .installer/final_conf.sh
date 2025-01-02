@@ -44,6 +44,9 @@ done
 # Tmux plugin manager
 ~/HyprBash/.scripts/tmux.sh
 
+# Change shell to zsh
+chsh -s $(which zsh)
+
 
 # Services
 services=(sddm NetworkManager)

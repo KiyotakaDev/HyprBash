@@ -13,8 +13,11 @@ ZSH="/usr/share/oh-my-zsh/"
 
 # Powerlevel10k path
 source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
+# Plugins
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-plugins=()
+plugins=(git zsh-autosuggestions zsh-completions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 

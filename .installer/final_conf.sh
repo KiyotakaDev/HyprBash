@@ -27,7 +27,7 @@ else
 fi
 
 # Symbolic link for ~/HyprBash/.config/* files
-if [ ! -d ~/.config_bak ]; then
+if [ ! -d "$HOME/.config_bak" ]; then
   echo -e "\e[36m[SYMLINK GENERATION]\e[0m"
   mv ~/.config ~/.config_bak
   mkdir ~/.config

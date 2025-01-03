@@ -6,7 +6,7 @@ create_session() {
   # Checks if session exists
   if ! tmux has-session -t "$session_name" &> /dev/null; then
     # If not create session
-    tmux new-session -d -s "$session_name" "fastfetch; bash"
+    tmux new-session -d -s "$session_name" "fastfetch; zsh"
   fi
 }
 

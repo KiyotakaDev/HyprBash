@@ -32,9 +32,8 @@ qt5ct                         # Qt5 Configuration Utility
 qt5-wayland                   # Wayland support in qt5
 kvantum                       # SVG based qt6 theme engine
 zsh-theme-powerlevel10k       # ZSH plugin
-zsh-autosuggestions           # ||
-zsh-syntax-highlighting       # ||
-zsh-completions               # ||
+zsh-syntax-highlighting-git   # ||
+zsh-autosuggestions-git       # ||
 
 # --------------------  DEVELOPMENT
 neovim                # Simple editor

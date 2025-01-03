@@ -34,6 +34,7 @@ kvantum                       # SVG based qt6 theme engine
 zsh-theme-powerlevel10k       # ZSH plugin
 zsh-syntax-highlighting-git   # ||
 zsh-autosuggestions-git       # ||
+eza                           # || modern replacement for ls
 
 # --------------------  DEVELOPMENT
 neovim                # Simple editor

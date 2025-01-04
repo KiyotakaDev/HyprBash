@@ -18,6 +18,7 @@ alias ll='eza -lha --icons=auto --sort=name --group-directories-first' # long li
 alias ld='eza -lhD --icons=auto' # long list dirs
 alias lt='eza --icons=auto --tree' # list folder as tree
 alias src='source ~/.zshrc' # source conf file
+alias icat='kitten icat' # Kitty image viewer
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

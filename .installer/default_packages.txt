@@ -29,6 +29,7 @@ dolphin                       # File manager
 pamixer                       # Audio pkg for script
 nwg-look                      # GTK3 settings editor
 qt5ct                         # Qt5 Configuration Utility
+qt6ct                         # Qt6 Configuration Utility
 qt5-wayland                   # Wayland support in qt5
 qt6-wayland                   # Wayland support in qt6
 kvantum                       # SVG based qt6 theme engine

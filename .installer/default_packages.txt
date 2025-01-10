@@ -1,51 +1,62 @@
 # ----------------------------  SYSTEM 
 hyprland                      # Hyprland tiling compositor
 kitty                         # Terminal
-tmux                          # Terminal multiplexer
-gtk3                          # Correct exec in wayland
+gtk3                          # Correct exec of kitty in wayland
 noto-fonts-cjk                # Chinese, Japanese, Korean fonts
 otf-font-awesome              # Waybar font
 ttf-noto-nerd                 # Nerd font for icons
 pulseaudio                    # Sound server middleware
 pavucontrol                   # Frontend GTK volume control tool
-zsh                           # Shell
 fastfetch                     # Neofetch-like
 unzip                         # Unzip files and (clangd | glsl required)
 waybar                        # Status bar
 wlogout                       # Logout interface
-
 sddm                          # Display manager
 qt5-quickcontrols             # Avoid theme errors
 qt5-quickcontrols2            # ||
 qt5-graphicaleffects          # ||
-pipewire                      # Hyprland recommended
-wireplumber                   # Hyprland recommended
 
-firefox                       # Browser
+
+# ----------------------------  Must have (Hyprland recommended)
+dunst                         # Notification daemon
+pipewire                      # Low-latency audio/video router and processor
+wireplumber                   # Session / policy manager implementation for PipeWire
 xdg-desktop-portal-hyprland   # Screensharing, global shortcuts, etc.
+
+
+# ----------------------------  APPS
+firefox                       # Browser
 rofi-wayland                  # App launcher
 cliphist                      # Clipboard manager
 dolphin                       # File manager
 pamixer                       # Audio pkg for script
+
+
+# ----------------------------  Terminal
+zsh                           # Shell
+zsh-theme-powerlevel10k       # ZSH theme plugin
+zsh-syntax-highlighting-git   # || styntax highlihgting
+zsh-autosuggestions-git       # || autosuggestions
+eza                           # || modern replacement for ls
+tmux                          # Terminal multiplexer
+
+
+# ----------------------------  DEVELOPMENT
+neovim                        # Simple editor
+git                           # Git
+openssh                       # For ssh
+npm                           # Package manager (lsp required)
+cmake                         # CMake
+less                          # Git pager
+valgrind                      # Memory-management problems in programs
+
+
+# ----------------------------  PRETTIER
 nwg-look                      # GTK3 settings editor
 qt5ct                         # Qt5 Configuration Utility
 qt6ct                         # Qt6 Configuration Utility
 qt5-wayland                   # Wayland support in qt5
 qt6-wayland                   # Wayland support in qt6
 kvantum                       # SVG based qt6 theme engine
-zsh-theme-powerlevel10k       # ZSH theme plugin
-zsh-syntax-highlighting-git   # || styntax highlihgting
-zsh-autosuggestions-git       # || autosuggestions
-eza                           # || modern replacement for ls
-
-# --------------------  DEVELOPMENT
-neovim                # Simple editor
-git                   # Git
-openssh               # For ssh
-npm                   # Package manager (lsp required)
-cmake                 # CMake
-less                  # Git pager
-valgrind              # Memory-management problems in programs
-
-# -------------------- PRETTIER
-swww                  # Wallpapers
+kvantum-qt5                   # Kvantum qt5ct support
+swww                          # Wallpapers

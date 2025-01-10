@@ -1,0 +1,42 @@
+# Terminal main colors
+background  #1e0d2e
+foreground  #e5cff7
+
+# Cursor related
+cursor                #fb32b7
+cursor_text_color     #00fff0
+selection_background  #ec34ad
+selection_foreground  #150f61
+url_color             #fb32b7
+
+# Black
+color0   #2d1537
+color8   #2d1537
+
+# Red
+color1   #d72868
+color9   #d72868
+
+# Green
+color2   #28d784
+color10  #28d784
+
+# Yellow
+color3   #aebc10
+color11  #aebc10
+
+# Blue
+color4  #1063bc
+color12  #1063bc
+
+# Magenta
+color5   #9c10bc
+color13  #9c10bc
+
+# Cyan
+color6   #10bcb9
+color14  #10bcb9
+
+# White
+color7   #f8f3fc
+color15  #f8f3fc

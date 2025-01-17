@@ -26,13 +26,8 @@ return {
       ensure_installed = {
         "bashls",
         "clangd",
-        "cssls",
-        "tailwindcss",
-        "glsl_analyzer",
         "lua_ls",
-        "html",
-        "eslint",
-        "jsonls"
+        "jsonls",
       },
     })
   end,

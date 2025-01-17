@@ -17,9 +17,9 @@ return {
         "lua",
         "c",
         "cpp",
-        "glsl",
-        "css",
         "gitignore",
+        "cmake",
+        "json"
       },
        highlight = {
         enable = true,

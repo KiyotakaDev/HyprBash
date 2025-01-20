@@ -12,14 +12,15 @@ return {
     -- configure treesitter
     treesitter.setup({ -- enable syntax highlighting
       ensure_installed = {
+        "asm",
         "bash",
-        "vim",
-        "lua",
         "c",
+        "cmake",
         "cpp",
         "gitignore",
-        "cmake",
-        "json"
+        "json",
+        "lua",
+        "vim"
       },
        highlight = {
         enable = true,

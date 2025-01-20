@@ -24,10 +24,11 @@ return {
     mason_lspconfig.setup({
       -- list of servers for mason to install
       ensure_installed = {
+        "asm_lsp",
         "bashls",
         "clangd",
-        "lua_ls",
         "jsonls",
+        "lua_ls"
       },
     })
   end,

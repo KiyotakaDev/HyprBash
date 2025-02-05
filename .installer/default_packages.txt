@@ -22,6 +22,7 @@ dunst                         # Notification daemon
 pipewire                      # Low-latency audio/video router and processor
 wireplumber                   # Session / policy manager implementation for PipeWire
 xdg-desktop-portal-hyprland   # Screensharing, global shortcuts, etc.
+hyprpolkitagent               # Simple polkit authentication agent for Hyprland
 
 
 # ----------------------------  APPS
@@ -39,17 +40,6 @@ zsh-syntax-highlighting-git   # || styntax highlihgting
 zsh-autosuggestions-git       # || autosuggestions
 eza                           # || modern replacement for ls
 tmux                          # Terminal multiplexer
-
-
-# ----------------------------  DEVELOPMENT
-neovim                        # Simple editor
-git                           # Git
-openssh                       # For ssh
-npm                           # Package manager (lsp required)
-cmake                         # CMake
-less                          # Git pager
-valgrind                      # Memory-management problems in programs
-rust                          # Multi-paradigm programming language
 
 
 # ----------------------------  PRETTIER

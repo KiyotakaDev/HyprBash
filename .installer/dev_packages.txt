@@ -1,0 +1,11 @@
+# ----------------------------  DEVELOPMENT
+neovim                        # Simple editor
+git                           # Git
+openssh                       # For ssh
+npm                           # Package manager (lsp required)
+cmake                         # CMake
+less                          # Git pager
+valgrind                      # Memory-management problems in programs
+rust                          # Multi-paradigm programming language
+docker                        # Pack, ship and run any applications as lightweight container
+

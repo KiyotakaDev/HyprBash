@@ -10,12 +10,24 @@ handle_error() {
 source ./pkg_functions.sh || handle_error "Sourcing functions file" 
 source ./formats.sh || handle_error "Sourcing formats file"
 
+# Look for files given by user or command
+file="./default_packages.txt"
+if [[ $# -gt 0 ]]; then
+  cat ./default_packages.txt \
+    <(echo -e "\n") $1 \
+    > final_pkgs.txt
+
+  file="./final_pkgs.txt"
+fi
 
 # Extract package names, taking spaces as delimiter
-packages=($(grep -E '^[^#]+[[:space:]]+#?' ./default_packages.txt | awk '{print $1}'))
+packages=($(grep -E '^[^#]+[[:space:]]+#?' "${file}" | awk '{print $1}'))
 if has_nvidia; then
   packages+=("nvidia-dkms" "nvidia-utils" "egl-wayland" "linux-headers")
 fi
+
+# Delete file if exists
+[[ -f "./final_pkgs.txt" ]] && rm "./final_pkgs.txt"
 
 # YAY helper installer
 echo -e "\n\e[36m[INSTALLING HELPER ╰(▔∀▔)╯]\e[0m"
@@ -40,6 +52,10 @@ for pkg in "${packages[@]}"; do
     yay_pkgs+=("$pkg")
   fi  
 done
+
+# If the sum of packages queued is 0 then exit script
+sum=$(( ${#arch_pkgs[@]} + ${#yay_pkgs[@]} + ${#error_pkgs[@]} ))
+[[ $sum -eq 0 ]] && exit 0
 
 echo -e "\n\e[36m[INSTALLING PACKAGES o(≧▽≦)o]\e[0m"
 if [ "${#arch_pkgs[@]}" -gt 0 ]; then

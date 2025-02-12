@@ -9,10 +9,7 @@ handle_error() {
 source ./pkg_functions.sh || handle_error "Sourcing functions file" 
 source ./formats.sh || handle_error "Sourcing formats file"
 
-# 1: Base config script (pacman, grub)
-./base_conf.sh
-
-# 2: Packages installer script
+# 1: Packages installer script
 if [[ $# -eq 0 ]]; then
   echo "This command needs a flag to be executed"
   echo "Execute with -h to know the flags"
@@ -35,6 +32,9 @@ while getopts "dsch" opt; do
        ;;
   esac
 done
+
+# 2: Base config script (pacman, grub)
+./base_conf.sh
 
 # 3: NVIDIA specific config script 
 ./nvidia_conf.sh

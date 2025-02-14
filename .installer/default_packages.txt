@@ -20,6 +20,10 @@ qt5-graphicaleffects          # ||
 # ----------------------------  Must have (Hyprland recommended)
 dunst                         # Notification daemon
 pipewire                      # Low-latency audio/video router and processor
+pipewire-audio                # ||
+pipewire-alsa                 # ||
+pipewire-jack                 # ||
+pipewire-pulse                # ||
 wireplumber                   # Session / policy manager implementation for PipeWire
 xdg-desktop-portal-hyprland   # Screensharing, global shortcuts, etc.
 hyprpolkitagent               # Simple polkit authentication agent for Hyprland

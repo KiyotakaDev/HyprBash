@@ -69,7 +69,6 @@ yay_installer() {
 
     if [ $? -eq 0 ]; then
       echo -e "\n\e[36m[HELPER INSTALLED ＼(≧▽≦)／]\e[0m"
-      exit 0
     fi
   fi
 }

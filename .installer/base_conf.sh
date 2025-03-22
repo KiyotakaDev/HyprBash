@@ -34,6 +34,17 @@ if [ ! -f /etc/default/grub.bak ] && [ ! -f /boot/grub/grub.cfg.bak ]; then
   sudo cp /etc/default/grub /etc/default/grub.bak
   sudo cp /boot/grub/grub.cfg /boot/grub/grub.cfg.bak
 
+  # Windows entry
+  while true; do
+    read -p "Do you have windows on your system? (y|n): " yn
+    case $yn in
+      [Yy]*) ./grub_windows_entry.sh
+        break;;
+      [Nn]*) break;;
+      *) echo "Please answer yes or no.";;
+    esac
+  done
+
   if has_nvidia; then
     echo -e "${boot_f} NVIDIA detected, adding \"nvidia_drm.modset=1\" to boot option"
     sudo sed -i "/^GRUB_TIMEOUT=/s/[0-9]\+$/15/ 
@@ -51,8 +62,6 @@ if [ ! -f /etc/default/grub.bak ] && [ ! -f /boot/grub/grub.cfg.bak ]; then
     # Change THEME
     sudo sed -i "/GRUB_GFXMODE/c\GRUB_GFXMODE=\2560x1440,1680x1050,auto
     /^#GRUB_THEME/c\GRUB_THEME=\"/usr/share/grub/themes/jp_theme/theme.txt\"" /etc/default/grub
-    # Windows entry
-    ./grub_windows_entry.sh
     # Make grub config file
     sudo grub-mkconfig -o /boot/grub/grub.cfg
   fi
